@@ -1,7 +1,6 @@
 package com.test.coze.demo;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +9,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Table
-@Entity
+@Entity(name = "posts")
 public class Posts {
     @Id
     @Column(name = "id")
@@ -20,7 +19,7 @@ public class Posts {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "title")
+    @Column(name = "title_post")
     private String title;
 
     @Column(name = "created_at")
@@ -29,5 +28,9 @@ public class Posts {
     public Posts(String content, String title) {
         this.content = content;
         this.title = title;
+    }
+
+    public Posts() {
+
     }
 }
